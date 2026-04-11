@@ -3,6 +3,10 @@ ENV GO111MODULE=on
 ENV CGO_ENABLED=0
 ENV GOOS=linux
 
+# RELEASE_VERSION is baked into the binary via ldflags. Override via
+# `docker build --build-arg RELEASE_VERSION=2.184.0-yandex.1`.
+ARG RELEASE_VERSION=unspecified
+
 RUN apk add --no-cache make git
 
 WORKDIR /go/src/github.com/supabase/auth
@@ -14,8 +18,7 @@ RUN make deps
 # Building stuff
 COPY . /go/src/github.com/supabase/auth
 
-# Make sure you change the RELEASE_VERSION value before publishing an image.
-RUN RELEASE_VERSION=unspecified make build
+RUN RELEASE_VERSION=${RELEASE_VERSION} make build
 
 # Always use alpine:3 so the latest version is used. This will keep CA certs more up to date.
 FROM alpine:3
