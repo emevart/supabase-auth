@@ -686,6 +686,9 @@ func (a *API) Provider(ctx context.Context, name string, scopes string) (provide
 	case "workos":
 		pConfig = config.External.WorkOS
 		p, err = provider.NewWorkOSProvider(pConfig)
+	case "yandex":
+		pConfig = config.External.Yandex
+		p, err = provider.NewYandexProvider(pConfig, scopes)
 	case "zoom":
 		pConfig = config.External.Zoom
 		p, err = provider.NewZoomProvider(pConfig)
