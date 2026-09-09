@@ -17,6 +17,10 @@ downstream patches, нужные SdamEx. Документ описывает п�
 | Downstream commits после merge base | 2 |
 | Upstream-only commits в локальных refs | 85 |
 
+GitHub default branch — master (проверено через gh repo view). Для новой задачи
+над downstream-кодом явно выбирай базу yandex: локальный origin/HEAD не меняет
+настройку default branch на GitHub. Изменение default branch — отдельное решение.
+
 В локальных refs `origin/HEAD` указывает на `origin/yandex`, хотя upstream-style
 workflows и CONTRIBUTING ориентированы на `master`. Интегрировать эту docs-правку
 следует в `yandex`. Sync с `origin/master` — отдельная высокорисковая работа:
