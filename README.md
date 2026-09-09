@@ -1,5 +1,10 @@
 # Auth - Authentication and User Management by Supabase
 
+> **SdamEx fork.** Upstream Supabase Auth attribution and documentation are
+> preserved below. Fork-specific branch, Yandex OAuth patch, consumer contract,
+> verification limits and release status: [docs/fork/README.md](docs/fork/README.md).
+> The inherited Supabase publish/release workflows are not a ready fork pipeline.
+
 [![Coverage Status](https://coveralls.io/repos/github/supabase/auth/badge.svg?branch=master)](https://coveralls.io/github/supabase/auth?branch=master)
 
 Auth is a user management and authentication server written in Go that powers
